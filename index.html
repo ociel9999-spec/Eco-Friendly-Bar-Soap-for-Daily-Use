@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guide — Example Layout</title>
+  <style>
+    :root{
+      --max-w:1200px;
+      --accent:#0b7;
+      --muted:#666;
+      --card-bg:#fff;
+      --bg:#f6f7f8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
+      background:var(--bg);
+      color:#111;
+      line-height:1.5;
+    }
+    header{
+      background:white;
+      border-bottom:1px solid #e6e6e6;
+    }
+    .wrap{
+      max-width:var(--max-w);
+      margin:0 auto;
+      padding:18px;
+    }
+    .top{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      justify-content:space-between;
+    }
+    .logo{font-weight:700;color:var(--accent)}
+    nav a{margin-left:14px;color:var(--muted);text-decoration:none;font-size:14px}
+    .breadcrumb{
+      font-size:13px;
+      color:var(--muted);
+      margin:12px 0 0;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:24px;
+      align-items:start;
+      margin:20px auto;
+      max-width:var(--max-w);
+      padding:0 18px;
+    }
+    .hero-left{background:white;padding:22px;border-radius:6px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+    .hero img{width:100%;height:220px;object-fit:cover;border-radius:6px}
+    .hero h1{margin:12px 0 6px;font-size:24px}
+    .hero p{margin:0;color:var(--muted)}
+
+    main{
+      max-width:var(--max-w);
+      margin:22px auto;
+      padding:0 18px 60px;
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:28px;
+    }
+
+    article{
+      background:var(--card-bg);
+      padding:20px;
+      border-radius:6px;
+      box-shadow:0 1px 0 rgba(0,0,0,.03);
+    }
+    article img{max-width:100%;display:block;margin:12px 0;border-radius:6px}
+    article h2{margin-top:18px}
+    article p{margin:10px 0;color:#222}
+
+    aside{
+      position:relative;
+    }
+    .sticky{
+      position:sticky;
+      top:20px;
+      align-self:start;
+      background:white;
+      padding:16px;
+      border-radius:6px;
+      border:1px solid #eee;
+      box-shadow:0 2px 8px rgba(0,0,0,.03);
+    }
+    .toc h3{margin:0 0 8px;font-size:16px}
+    .toc ul{list-style:none;padding:0;margin:0}
+    .toc a{display:block;padding:6px 2px;color:var(--muted);text-decoration:none;font-size:14px}
+    .toc a.active{color:var(--accent);font-weight:600}
+
+    .products{margin-top:16px}
+    .product{
+      display:flex;
+      gap:10px;
+      padding:10px 0;
+      border-top:1px solid #f1f1f1;
+      align-items:center;
+    }
+    .product img{width:64px;height:64px;object-fit:cover;border-radius:6px}
+    .product .meta{font-size:14px}
+    .product .meta .name{font-weight:600}
+    .product .meta .price{color:var(--muted);font-size:13px}
+
+    footer{max-width:var(--max-w);margin:30px auto;padding:18px;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero, main{grid-template-columns:1fr}
+      .hero img{height:180px}
+      .top{flex-wrap:wrap}
+      .sticky{position:relative;top:auto}
+      .toc-toggle{display:inline-block;margin-top:8px}
+      .toc-list{display:none}
+      .toc-list.open{display:block}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap top">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="logo">Brand</div>
+      <nav>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+      </nav>
+    </div>
+    <div><input placeholder="Search..." style="padding:8px 10px;border:1px solid #e6e6e6;border-radius:6px"></div>
+  </div>
+  <div class="wrap breadcrumb">Home / Blog / Guides</div>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="hero">
+    <h1>Bar Soaps — Ultimate Guide</h1>
+    <p>A short intro sentence about what the guide covers. Clear, scannable and useful.</p>
+  </div>
+  <aside>
+    <div class="sticky">
+      <strong>Featured</strong>
+      <div style="margin-top:8px;color:var(--muted)">Top selling soaps & bundles</div>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=300&auto=format&fit=crop" style="width:64px;height:64px;object-fit:cover;border-radius:6px">
+        <div style="flex:1">
+          <div style="font-weight:700">Cedar + Charcoal</div>
+          <div style="color:var(--muted);font-size:13px">From $8</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+</section>
+
+<main>
+  <article id="content">
+    <h2 id="what">What is a bar soap?</h2>
+    <p>Short explanatory paragraph. Replace this with your own copy.</p>
+    <img src="https://images.unsplash.com/photo-1593032465176-7a0e34b6f3c5?q=80&w=1200&auto=format&fit=crop" alt="">
+    <h2 id="benefits">Benefits</h2>
+    <p>Bulleted summary:</p>
+    <ul>
+      <li>Eco-friendly packaging</li>
+      <li>Longer lasting</li>
+      <li>Concentrated cleansing</li>
+    </ul>
+
+    <h2 id="how-to">How to use</h2>
+    <p>Step-by-step instructions and tips. Add images and callouts as needed.</p>
+
+    <h2 id="ingredients">Common ingredients</h2>
+    <p>Explain ingredients and skin types.</p>
+
+    <h2 id="faq">FAQ</h2>
+    <h3>Is bar soap better for the environment?</h3>
+    <p>Answer with short paragraph.</p>
+
+    <h2 id="related">Related products</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px">
+      <div style="background:white;padding:12px;border-radius:8px;border:1px solid #f0f0f0">
+        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=800&auto=format&fit=crop" style="width:100%;height:120px;object-fit:cover;border-radius:6px">
+        <div style="margin-top:8px;font-weight:700">Cold-Processed Bar</div>
+        <div style="color:var(--muted);font-size:13px">From $9</div>
+      </div>
+      <div style="background:white;padding:12px;border-radius:8px;border:1px solid #f0f0f0">
+        <img src="https://images.unsplash.com/photo-1499696010193-5e6f1f6f1b6e?q=80&w=800&auto=format&fit=crop" style="width:100%;height:120px;object-fit:cover;border-radius:6px">
+        <div style="margin-top:8px;font-weight:700">Charcoal Bar</div>
+        <div style="color:var(--muted);font-size:13px">From $11</div>
+      </div>
+    </div>
+  </article>
+
+  <aside>
+    <div class="sticky">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="toc">
+          <h3>On this page</h3>
+        </div>
+        <button class="toc-toggle" aria-expanded="false" onclick="toggleTOC()" style="display:none">☰</button>
+      </div>
+      <nav class="toc-list" id="tocList" aria-label="Table of contents">
+        <ul id="toc"></ul>
+      </nav>
+
+      <div class="products" aria-label="recommendations">
+        <h4 style="margin:12px 0 6px">Recommended</h4>
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=600&auto=format&fit=crop" alt="">
+          <div class="meta">
+            <div class="name">Cedar + Charcoal</div>
+            <div class="price">$10</div>
+          </div>
+        </div>
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1499696010193-5e6f1f6f1b6e?q=80&w=600&auto=format&fit=crop" alt="">
+          <div class="meta">
+            <div class="name">Gentle Unscented</div>
+            <div class="price">$8</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  © 2025 Example — concise footer text and links.
+</footer>
+
+<script>
+  // Build TOC from article headings
+  (function(){
+    const content = document.getElementById('content');
+    const toc = document.getElementById('toc');
+    if(!content || !toc) return;
+    const headings = content.querySelectorAll('h2, h3');
+    headings.forEach(h=>{
+      if(!h.id){
+        h.id = h.textContent.trim().toLowerCase().replace(/\s+/g,'-');
+      }
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#'+h.id;
+      a.textContent = h.textContent;
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        document.getElementById(h.id).scrollIntoView({behavior:'smooth',block:'start'});
+        history.pushState(null,'', '#'+h.id);
+      });
+      li.appendChild(a);
+      toc.appendChild(li);
+    });
+
+    // highlight on scroll
+    const links = toc.querySelectorAll('a');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        const id = ent.target.id;
+        const link = toc.querySelector('a[href="#'+id+'"]');
+        if(link) link.classList.toggle('active', ent.isIntersecting);
+      });
+    }, {rootMargin: '-40% 0px -40% 0px', threshold:0});
+    headings.forEach(h=>obs.observe(h));
+  })();
+
+  // mobile TOC toggle
+  function toggleTOC(){
+    const list = document.getElementById('tocList');
+    const btn = document.querySelector('.toc-toggle');
+    if(!list) return;
+    const open = list.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+
+  // show toggle on small screens
+  (function(){
+    function update(){
+      const btn = document.querySelector('.toc-toggle');
+      if(window.innerWidth <= 900){
+        btn.style.display = 'inline-block';
+        document.getElementById('tocList').classList.remove('open');
+      } else {
+        btn.style.display = 'none';
+        document.getElementById('tocList').classList.add('open');
+      }
+    }
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+</body>
+</html>
